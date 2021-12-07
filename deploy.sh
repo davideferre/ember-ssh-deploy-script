@@ -47,8 +47,8 @@ remove() {
   echo -e "Revision \033[96m$1 \033[39mremoved."
 }
 
-DEPLOY_ENV_FILE='.env.deploy.production'
-PACKAGE_JSON_FILE='package.json'
+DEPLOY_ENV_FILE='.env.deploy.example'
+PACKAGE_JSON_FILE='package.example.json'
 SSH_HOST=$(cat ${DEPLOY_ENV_FILE} | grep SSH_HOST | head -1 | awk -F= '{ print $2 }' | sed 's/[",]//g' | tr -d '[:space:]')
 SSH_PORT=$(cat ${DEPLOY_ENV_FILE} | grep SSH_PORT | head -1 | awk -F= '{ print $2 }' | sed 's/[",]//g' | tr -d '[:space:]')
 SSH_USER=$(cat ${DEPLOY_ENV_FILE} | grep SSH_USER | head -1 | awk -F= '{ print $2 }' | sed 's/[",]//g' | tr -d '[:space:]')
